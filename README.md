@@ -86,6 +86,22 @@
   <li>Quản lý bộ nhớ.</li></br>
   <li>Hành vi thực thi.</li></br>
   <li>Chỉ số thực thi.</li></br>
-  <li>Kết nối mạng.</li>
+  <li>Kết nối mạng.</li></br>
   <li>Lập lịch.</li>
+</ul>
+
+### I: Spark RDD
+#### 1. Giới thiệu
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; RDD (Resilient Distributed Datasets) là một cấu trúc dữ liệu cơ bản của Spark, là một tập hợp bất biến phân tán của một đối tượng.</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Mỗi dataset trong RDD được chia thành nhiều phần vùng logical, có thể được tính toán trên các nút khác nhau.</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; RDD có thể chứa bất kì kiểu dữ liệu của Python, Java hoặc Scala bao gồm các lớp do người dùng định nghĩa.</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Về hình thức, RDD là một tập hợp các bản ghi được phân vùng và chỉ cho phép đọc. RDD có thể được tạo thông qua các hoạt động xác định trên dữ liệu trên bộ lưu trữ ổn định hoặc các RDD khác. RDD là một tập hợp các phần tử chịu được lỗi có thể hoạt động song song.</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Có 2 cách để tạo RDDs:</p>
+<ul align="justify">
+  <li>Tạo từ một tập hợp dữ liệu có sẵn trong ngôn ngữ sử dụng như Java, Python, Scala.</li></br>
+  <li>Lấy từ dataset hệ thống lưu trữ bên ngoài như HDFS, Hbase hoặc các cơ sở dữ liệu quan hệ.</li>
 </ul>

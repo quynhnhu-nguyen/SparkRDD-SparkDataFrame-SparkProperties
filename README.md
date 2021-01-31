@@ -45,16 +45,47 @@
 
 #### 3. Các thuộc tính của Spark
 
-
-<ul align="justify">
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Thuộc tính Spark chia làm 2 loại:</p>
+<ul align="justify">
   <li>Liên quan đến triển khai: <b><em>spark.driver.memory, spark.executor.instances</em></b>.</li></br>
-  <li>Liên quan đến kiểm soát thời gian chạy Spark: <b><em>spark.task.maxFailures.</em></b>.</li>
+  <li>Liên quan đến kiểm soát thời gian chạy Spark: <b><em>spark.task.maxFailures</em></b>.</li>
+</ul>
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Một số thuộc tính ứng dụng</p>
+<ul align="justify">
   <li>spark.app.name: Tên ứng dụng được hiển thị trong giao diện người dùng và trong dữ liệu nhật ký.</li></br>
   <li>spark.driver.cores: Số lõi để sử dụng cho quy trình trình điều khiển, chỉ ở chế độ cụm.</li></br>
   <li>spark.logConf: Ghi lại SparkConf hiệu quả dưới dạng thông tin khi một SparkContext được khởi động.</li></br>
   <li>spark.driver.memoryOverhead: Số lượng bộ nhớ không phải bộ nhớ heap sẽ được phân bổ cho mỗi quá trình điều khiển ở chế độ cụm.</li></br>
   <li>...</li>
+</ul>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Một số thuộc tính xáo trộn</p>
+<ul align="justify">
+  <li>spark.shuffle.compress: Có nén các map output file hay không.</li></br>
+  <li>spark.shuffle.io.retryWait: (Chỉ mạng) Thời gian chờ giữa các lần tìm nạp lại. Theo mặc định, Độ trễ tối đa do thử lại là 15 giây.</li></br>
+  <li>spark.shuffle.service.port: Cổng mà dịch vụ shuffle ngoài sẽ chạy, mặc định port 7337.</li></br>
+  <li>...</li>
+</ul>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Giao diện người dùng</p>
+<ul align="justify">
+  <li>spark.eventLog.enabled: Có ghi lại các sự kiện Spark hay không, hữu ích trong việc tạo lại giao diện người dùng Web sau khi ứng dụng hoàn tất.</li></br>
+  <li>spark.eventLog.logBlockUpdates.enabled: Có ghi lại các sự kiện cho mỗi lần cập nhật khối hay không, nếu spark.eventLog.enabled là true. Cảnh báo: Điều này sẽ làm tăng đáng kể kích thước của nhật ký sự kiện.</li></br>
+  <li>spark.eventLog.compress: Có nén các sự kiện đã ghi nếu            spark.eventLog.enabled = true.</li></br>
+  <li>spark.eventLog.overwrite: Có ghi đè lên bất kỳ tệp hiện có nào không.</li></br>
+  <li>spark.ui.enabled: Có chạy giao diện người dùng web (User interface) cho ứng dụng Spark hay không.</li></br>
+  <li>...</li>
+</ul>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Nén và tuần tự hóa: spark.rdd.compress - Có nén các phân vùng tuần tự</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Một số thuộc tính khác</p>
+<ul align="justify">
+  <li>Môi trường thực thi.</li></br>
+  <li>Quản lý bộ nhớ.</li></br>
+  <li>Hành vi thực thi.</li></br>
+  <li>Chỉ số thực thi.</li></br>
+  <li>Kết nối mạng.</li>
+  <li>Lập lịch.</li>
 </ul>

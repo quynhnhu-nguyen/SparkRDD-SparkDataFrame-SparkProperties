@@ -90,7 +90,7 @@
   <li>Lập lịch.</li>
 </ul>
 
-### I: Spark RDD
+### II: Spark RDD
 #### 1. Giới thiệu
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; RDD (Resilient Distributed Datasets) là một cấu trúc dữ liệu cơ bản của Spark, là một tập hợp bất biến phân tán của một đối tượng.</p>
 
@@ -189,3 +189,67 @@
   <li>Checkpointing cũng tương tự như cache, chỉ khác nhau là lưu trữ vào đĩa cứng và không dùng được trong API của DataFrame.</li></br>
   <li>Cần sử dụng nhiều để tối ưu hóa.</li>
 </ul>
+
+### III: Spark DataFrame
+#### 1. Giới thiệu
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Spark DataFrame là một tập hợp dữ liệu phân tán được tổ chức thành các cột được đặt tên và cũng được sử dụng để cung cấp các hoạt động như lọc, tính toán tổng hợp, phân nhóm và cũng có thể được sử dụng với Spark SQL.</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Khung dữ liệu có thể được tạo bằng cách sử dụng các tệp dữ liệu có cấu trúc, cùng với các RDD hiện có, cơ sở dữ liệu bên ngoài và bảng Hive. </p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Về cơ bản, nó được gọi là một lớp trừu tượng được xây dựng trên RDD và cũng được theo sau bởi API tập dữ liệu đã được giới thiệu trong các phiên bản sau của Spark (2.0 +). </p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hơn nữa, các bộ dữ liệu không được giới thiệu trong Pyspark mà chỉ ở Scala với Spark nhưng đây không phải là trường hợp của Dataframe. </p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Khung dữ liệu phổ biến được gọi là DF là định dạng cột hợp lý giúp làm việc với RDD dễ dàng và thuận tiện hơn, cũng sử dụng các chức năng tương tự như RDD theo cách tương tự. Nếu nói nhiều hơn ở mức độ khái niệm thì nó tương đương với các bảng quan hệ cùng với các tính năng và kỹ thuật tối ưu hóa tốt.</p>
+
+#### 2. Lợi ích mà DataFrame mang lại
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Xử lý dữ liệu có cấu trúc và bán cấu trúc </p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Slicing và Dicing</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hỗ trợ nhiều ngôn ngữ</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Nguồn dữ liệu</p>
+
+#### 3. Các tính năng của DataFrame và nguồn dữ liệu Pyspark
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Các tính năng</p>
+<ul align="justify">
+  <li>DataFrame được phân phối trong tự nhiên, làm cho nó trở thành một cấu trúc dữ liệu có khả năng chịu lỗi và có tính khả dụng cao.</li></br>
+  <li>Đánh giá lười biếng là một chiến lược đánh giá giữa việc đánh giá một biểu thức cho đến khi giá trị của nó là cần thiết. Nó tránh đánh giá lặp lại. Đánh giá lười biếng trong Spark có nghĩa là quá trình thực thi sẽ không bắt đầu cho đến khi một hành động được kích hoạt. Trong Spark, bức tranh về sự lười biếng xuất hiện khi các phép biến đổi Spark xảy ra.</li></br>
+  <li>DataFrame là bất biến trong tự nhiên. Bởi bất biến, ý tôi là nó là một đối tượng có trạng thái không thể sửa đổi sau khi nó được tạo. Nhưng chúng ta có thể biến đổi các giá trị của nó bằng cách áp dụng một phép biến đổi nhất định, như trong RDD.</li>
+</ul>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Nguồn dữ liệu Pyspark</p>
+<ul align="justify">
+  <li>Đọc dữ liệu.</li></br>
+  <li>Hiển thị dữ liệu.</li></br>
+  <li>Sử dụng phương pháp printSchema.</li></br>
+  <li>Sử dụng phương pháp select</li></br>
+  <li>Sử dụng bộ lọc tuổi.</li></br>
+  <li>Sử dụng phương pháp groupBy.</li></br>
+  <li>Sử dụng hàm SQL trên SparkSession.</li></br>
+  <li>Sử dụng hàm SQL trên một phiên Spark cho chế độ xem tạm thời toàn cầu.</li>
+</ul>
+
+## Phần 2: CODE MINH HỌA
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Tạo một Pyspark RDD:</p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389482-1340bd00-6416-11eb-9f30-5d5c4ceaf7c7.jpg" width="90%"/></p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Chạy một vài thao tác cơ bản bằng Pyspark</p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389483-13d95380-6416-11eb-8e04-73152283c700.jpg" width="90%"/></p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hàm <b>Count()</b></p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389484-1471ea00-6416-11eb-94ec-885761180371.jpg" width="90%"/></p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hàm <b>Collect()</b></p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389486-1471ea00-6416-11eb-99c9-9a2d22147510.jpg" width="90%"/></p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hàm <b>foreach(f)</b></p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389487-150a8080-6416-11eb-89ae-a53812ab0812.jpg" width="90%"/></p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hàm <b>filler(f)</b></p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389489-15a31700-6416-11eb-9189-097ccb8e943d.jpg" width="90%"/></p>

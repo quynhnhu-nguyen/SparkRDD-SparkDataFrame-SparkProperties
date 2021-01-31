@@ -105,3 +105,87 @@
   <li>Tạo từ một tập hợp dữ liệu có sẵn trong ngôn ngữ sử dụng như Java, Python, Scala.</li></br>
   <li>Lấy từ dataset hệ thống lưu trữ bên ngoài như HDFS, Hbase hoặc các cơ sở dữ liệu quan hệ.</li>
 </ul>
+
+#### 2. Thực thi trên Spark RDD
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Dữ liệu trong MapReduce chia sẻ chậm do sao chép, tuần tự hóa và tốc độ I/O của ổ đĩa. Hầu hết các ứng dụng Hadoop, cần dành hơn 90% thời gian để thực hiện các thao tác đọc-ghi HDFS.</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Để khắc phục được vấn đề trên, các nhà nghiên cứu đã phát triển một framework chuyên biệt gọi là Apache Spark. </p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Ý tưởng chính của Spark là Resilient Distributed Datasets (RDD), nó hỗ trợ tính toán xử lý trong bộ nhớ. Điều này có nghĩa, nó lưu trữ trạng thái của bộ nhớ dưới dạng một đối tượng trên các công việc và đối tượng có thể chia sẻ giữa các công việc đó. Việc xử lý dữ liệu trong bộ nhớ nhanh hơn 10 đến 100 lần so với network và disk.</p>
+
+#### 3. Hoạt động tương tác 
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106388105-87c42d80-640f-11eb-96ff-199a7b3293e3.jpg" width="90%"/></p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hình minh họa này cho thấy các hoạt động tương tác trên Spark RDD. Nếu các truy vấn khác nhau được chạy lặp lại trên cùng một tập dữ liệu, thì dữ liệu cụ thể này có thể được lưu trong bộ nhớ để có thời gian thực thi tốt hơn.</p>
+
+#### 4. Hoạt động lặp
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106388107-88f55a80-640f-11eb-97cf-e6032dbba201.jpg" width="90%"/></p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hình minh họa dưới đây cho thấy các hoạt động lặp lại trên Spark RDD. Nó sẽ lưu trữ các kết quả trung gian trong một bộ nhớ phân tán thay vì Ổ lưu trữ ổn định (Disk) và làm cho hệ thống nhanh hơn.</p>
+
+#### 5. Các loại RDD
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106388108-898df100-640f-11eb-8feb-8e4fdbf2d43c.jpg" width="90%"/></p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Các RDD biểu diễn một tập hợp cố định, dã được phân vùng các record để có thể xử lý song song.</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Các record trong RĐ có thể là đối tượng Java, Scala hay Python.</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; RDD đã từng là API chính được sử dụng trong series Spark 1x và vẫn có thể sử dụng trong version 2x.</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; RDD API có thể được sử dụng trong Java, Scala hay Python:</p>
+<ul align="justify">
+  <li>Scala và Java: performance tương đương trên hầu hết mọi phần.</li></br>
+  <li>Python: mất một lượng performance, chủ yếu là cho việc serialization giữa tiến trình Python và JVM.</li>
+</ul>
+
+#### 6. Các transformation và action với RDD
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; RDD cung cấp các transformation và action hoạt động giống như DataFrame lẫn DataSets. Transformation xử lý các thao tác lazily và Action xử lý thao tác cần xử lý tức thời.</p>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Một số transformation:</p>
+<ul align="justify">
+  <li>Distinct: loại bỏ trùng lắp trong RDD</li></br>
+  <li>Filter: tương đương với việc sủ dụng where trong SQL – tìm các record trong RDD xem những phần tử nào thỏa điều kiện. Có thể cung cấp một hàm phức tạp sử dụng để filter các record cần thiết – như trong Python, có thể sử dụng hàm lambda để truyền vào filter.</li></br>
+  <li>Map: thực hiện  một công việc nào đó trên toàn bộ RDD. Trong Python sử dụng lambda với từng phần tử để truyền vào map.</li></br>
+  <li>flatMap: cung cấp một hàm đơn giản hơn hàm map.</li></br>
+  <li>sortBy: mô tả một hàm để trích xuất dữ liệu từ các object của RDD và thực hiện sort được từ đó.</li></br>
+  <li>randomSplit: nhận một mảng trọng số và tạo một random seed, tách các RDD thành một mảng các RDD có số lượng chia theo trọng số.</li>
+</ul>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Một số action:</p>
+<ul align="justify">
+  <li>Reduce: thực hiện hàm reduce trên RDD để thu về 1 giá trị duy nhất.</li></br>
+  <li>Count: đếm số dòng trong RDD.</li></br>
+  <li>countApprox: phiên bản đếm xấp xỉ của count nhưng phải cung cấp timeout vì có thể không nhận được kết quả.</li></br>
+  <li>countByValue: đếm số giá trị của RDD.</li></br>
+  <li>countApproxDistinct: đếm xấp xỉ các giá trị khác nhau.</li></br>
+  <li>countByValueApprox: đếm xấp xỉ các giá trị.</li></br>
+  <li>First: lấy giá trị đầu tiên của dataset.</li></br>
+  <li>Max và Min: lần lượt lấy giá trị lớn nhất và nhỏ nhất của dataset.</li></br>
+  <li>Take và các method tương tự: lấy một lượng giá trị từ trong RDD. Take trước hết scan qua một partition và sử dụng kết quả để dự đoán số lượng partition cần phải lấy thêm để thỏa mãn số lượng lấy.</li></br>
+  <li>Top và takeOrdered: top sẽ hiệu quả hơn takeOrdered vì top lấy các giá trị đầu tiên được sắp xếp ngầm trong RDD.</li></br>
+  <li>takeSamples: lấy một lượng giá trị ngẫu nhiên trong RDD.</li>
+</ul>
+
+#### 7. Một số kỹ thuật đối với RDD
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Lưu trữ file</p>
+<ul align="justify">
+  <li>Thực hiện ghi vào các file plain-text.</li></br>
+  <li>Có thể sử dụng các code nén từ thư viện Hadoop.</li></br>
+  <li>Lưu trữ vào các database bên ngoài yêu cầu ta phải lặp qua tất cả partition của RDD – công việc được thực hiện ngầm trong các high-level API.</li></br>
+  <li>sequenceFile là một flat file chưa các cặp key-value thường được sử dụng làm định dạng inout/output của MapReduce. Spark có thể ghi ác sequencefile bằng cách ghi lại các cặp key-value.</li></br>
+  <li>Spark cũng hỗ trợ ghi nhiều dạng file khác nhau cho phép define các class, định dạng output, config và compression scheme của Hadoop.</li>
+</ul>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Caching: tăng tốc độ xử lý bằng cache</p>
+<ul align="justify">
+  <li>Caching với RDD, Dataset hay DataFrame có nguyên lý như nhau.</li></br>
+  <li>Chúng ta có thể lựa chọn cache hay persist một RDD và mặc định chỉ xử lý dữ liệu trong bộ nhớ.</li>
+</ul>
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Checkpointing: lưu trữ lại các bước xử lý để phục hồi</p>
+<ul align="justify">
+  <li>Checkpointing lưu RDD vào đĩa cứng để các tiến trình khác để thể sử dụng lại RDD point này làm partition trung gian thay vì tính toán lại RDD từ các nguồn dữ liệu gốc.</li></br>
+  <li>Checkpointing cũng tương tự như cache, chỉ khác nhau là lưu trữ vào đĩa cứng và không dùng được trong API của DataFrame.</li></br>
+  <li>Cần sử dụng nhiều để tối ưu hóa.</li>
+</ul>

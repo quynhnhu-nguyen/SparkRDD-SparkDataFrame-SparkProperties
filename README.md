@@ -41,7 +41,20 @@
       ./bin/spark-submit --name "My app" --master local[4] --conf spark.eventLog.enabled=false --
       conf "spark.executor.extraJavaOptions=-XX:+PrintGCDetails -XX:+PrintGCTimeStamps" myApp.jar
 ```
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; <em>Spark-submit</em>: tải cấu hình tự động, chấp nhận bất kỳ thuộc tính nào nếu dùng cờ <em>--conf/-c</em>, sử dụng các cờ đặc biệt (dùng <em>./bin/spark-submit –help</em> để hiện thị tất cả các tùy chọn) cho các lệnh khởi động <em>spark—master</em>.</p>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; <em>Spark-submit</em>: tải cấu hình tự động, chấp nhận bất kỳ thuộc tính nào nếu dùng cờ <em>--conf/-c</em>, sử dụng các cờ đặc biệt (dùng <em>./bin/spark-submit – help</em> để hiện thị tất cả các tùy chọn) cho các lệnh khởi động <em>spark — master</em>.</p>
 
 #### 3. Các thuộc tính của Spark
 
+
+<ul align="justify">
+<li> Thuộc tính Spark chia làm 2 loại:
+  <li>Liên quan đến triển khai: <b><em>spark.driver.memory, spark.executor.instances</em></b>.</li></br>
+  <li>Liên quan đến kiểm soát thời gian chạy Spark: <b><em>spark.task.maxFailures.</em></b>.</li></li>
+
+<li> Một số thuộc tính ứng dụng
+  <li>spark.app.name: Tên ứng dụng được hiển thị trong giao diện người dùng và trong dữ liệu nhật ký.</li></br>
+  <li>spark.driver.cores: Số lõi để sử dụng cho quy trình trình điều khiển, chỉ ở chế độ cụm.</li></br>
+  <li>spark.logConf: Ghi lại SparkConf hiệu quả dưới dạng thông tin khi một SparkContext được khởi động.</li></br>
+  <li>spark.driver.memoryOverhead: Số lượng bộ nhớ không phải bộ nhớ heap sẽ được phân bổ cho mỗi quá trình điều khiển ở chế độ cụm.</li></br>
+  <li>...</li></li>
+</ul>

@@ -253,3 +253,11 @@
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hàm <b>filler(f)</b></p>
 <p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389810-f3aa9400-6417-11eb-83f7-3da817d02619.jpg" width="90%"/></p>
+
+## Phần 3: TÀI LIỆU THAM KHẢO
+ 
+&nbsp;&nbsp;&nbsp;&nbsp; 1. https://laptrinh.vn/books/apache-spark/page/apache-spark-rdd#bkmrk-resilient-distribute
+&nbsp;&nbsp;&nbsp;&nbsp; 2. https://spark.apache.org/docs/latest/configuration.html
+&nbsp;&nbsp;&nbsp;&nbsp; 3. http://itechseeker.com/tutorials/apache-spark/lap-trinh-spark-voi-scala/spark-sql-dataset-va-dataframes/
+&nbsp;&nbsp;&nbsp;&nbsp; 4. https://dzone.com/articles/pyspark-dataframe-tutorial-introduction-to-datafra
+&nbsp;&nbsp;&nbsp;&nbsp; 5. https://www.tutorialspoint.com/pyspark/pyspark_rdd.htm

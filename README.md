@@ -237,19 +237,19 @@
 ## Phần 2: CODE MINH HỌA
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Tạo một Pyspark RDD:</p>
-<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389482-1340bd00-6416-11eb-9f30-5d5c4ceaf7c7.jpg" width="90%"/></p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389800-f0afa380-6417-11eb-8317-e9b271378199.jpg" width="90%"/></p>
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Chạy một vài thao tác cơ bản bằng Pyspark</p>
-<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389483-13d95380-6416-11eb-8e04-73152283c700.jpg" width="90%"/></p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389803-f1e0d080-6417-11eb-85d1-5eebdf58087e.jpg" width="90%"/></p>
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hàm <b>Count()</b></p>
-<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389484-1471ea00-6416-11eb-94ec-885761180371.jpg" width="90%"/></p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389804-f2796700-6417-11eb-8321-14edf5029a92.jpg" width="90%"/></p>
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hàm <b>Collect()</b></p>
-<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389486-1471ea00-6416-11eb-99c9-9a2d22147510.jpg" width="90%"/></p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389807-f311fd80-6417-11eb-9c09-74e614329903.jpg" width="90%"/></p>
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hàm <b>foreach(f)</b></p>
-<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389487-150a8080-6416-11eb-89ae-a53812ab0812.jpg" width="90%"/></p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389808-f311fd80-6417-11eb-8536-12df949c10be.jpg" width="90%"/></p>
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Hàm <b>filler(f)</b></p>
-<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389489-15a31700-6416-11eb-9189-097ccb8e943d.jpg" width="90%"/></p>
+<p align="center"><img src ="https://user-images.githubusercontent.com/77887833/106389810-f3aa9400-6417-11eb-83f7-3da817d02619.jpg" width="90%"/></p>

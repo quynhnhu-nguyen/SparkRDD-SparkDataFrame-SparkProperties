@@ -256,8 +256,8 @@
 
 ## Phần 3: TÀI LIỆU THAM KHẢO
  
-&nbsp;&nbsp;&nbsp;&nbsp; 1. https://laptrinh.vn/books/apache-spark/page/apache-spark-rdd#bkmrk-resilient-distribute
-&nbsp;&nbsp;&nbsp;&nbsp; 2. https://spark.apache.org/docs/latest/configuration.html
-&nbsp;&nbsp;&nbsp;&nbsp; 3. http://itechseeker.com/tutorials/apache-spark/lap-trinh-spark-voi-scala/spark-sql-dataset-va-dataframes/
-&nbsp;&nbsp;&nbsp;&nbsp; 4. https://dzone.com/articles/pyspark-dataframe-tutorial-introduction-to-datafra
+&nbsp;&nbsp;&nbsp;&nbsp; 1. https://laptrinh.vn/books/apache-spark/page/apache-spark-rdd#bkmrk-resilient-distribute </br>
+&nbsp;&nbsp;&nbsp;&nbsp; 2. https://spark.apache.org/docs/latest/configuration.html </br>
+&nbsp;&nbsp;&nbsp;&nbsp; 3. http://itechseeker.com/tutorials/apache-spark/lap-trinh-spark-voi-scala/spark-sql-dataset-va-dataframes/ </br>
+&nbsp;&nbsp;&nbsp;&nbsp; 4. https://dzone.com/articles/pyspark-dataframe-tutorial-introduction-to-datafra </br>
 &nbsp;&nbsp;&nbsp;&nbsp; 5. https://www.tutorialspoint.com/pyspark/pyspark_rdd.htm
